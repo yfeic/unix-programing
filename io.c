@@ -14,9 +14,9 @@
 
 int main(void)
 {
-	//不带缓冲的I/O
 	if(0)
 	{
+		//不带缓冲的I/O
 		int n;
 		char buf[BUFFERSIZE];
 
@@ -27,15 +27,16 @@ int main(void)
 			err_sys("read error");
 		exit(0);
 	}
+	else
+	{
+		//标准I/O
+		int c;
 
-	//标准I/O
-	
-	int c;
-
-	while((c=getc(stdin))!=EOF)
-		if(putc(c,stdout)==EOF)
-			err_sys("output error");
-	if(ferror(stdin))
-		err_sys("input error");
-	exit(0);
+		while((c=getc(stdin))!=EOF)
+			if(putc(c,stdout)==EOF)
+				err_sys("output error");
+		if(ferror(stdin))
+			err_sys("input error");
+		exit(0);
+	}
 }
