@@ -23,11 +23,12 @@ $(target):$(obj)
 #将.c文件编译成.o文件
 %.o:%.c
 	@$(CC)  -c $< -o  $@ $(Cflag)
-
+#####
 ftw:ftw.o exception.o path_alloc.o
 	@$(CC) $^ -o out/$@ 
 getcwd:getcwd.o exception.o path_alloc.o
 	@$(CC) $^ -o out/$@ 
+
 #指定编译单个文件
 %:%.o exception.o
 	@$(CC) $^ -o out/$@ 

@@ -66,7 +66,7 @@ char * path_alloc(size_t *sizep)//also return allocated size, if nonull
 	 * Before POSIX.1-2001, we aren't guaranteed that PATH_MAX includes
 	 * the terminating null byte.Same goes for XPG3.
 	 */
-	
+
 	if((posix_version<200112L)&&(xsi_version<4))
 	{
 		size=pathmax+1;

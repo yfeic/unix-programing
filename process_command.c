@@ -16,7 +16,7 @@ int main(void)
 	char buf[MAXLINE];
 	pid_t pid;
 	int status;
-	
+
 	printf("%% ");
 	while(fgets(buf,MAXLINE,stdin)!=NULL)
 	{
@@ -34,7 +34,7 @@ int main(void)
 		}
 
 		if((pid=waitpid(pid,&status,0))<0)
-			err_sys("waaitpid error");
+			err_sys("waitpid error");
 		printf("%% ");
 	}
 
